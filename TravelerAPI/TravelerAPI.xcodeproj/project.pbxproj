@@ -99,13 +99,11 @@
 		0E7F6848290A3AFE00B2A06A /* TravelerAPI */ = {
 			isa = PBXGroup;
 			children = (
-				0E7F6849290A3AFE00B2A06A /* AppDelegate.swift */,
-				0E7F684B290A3AFE00B2A06A /* SceneDelegate.swift */,
-				0E7F684D290A3AFE00B2A06A /* ViewController.swift */,
-				0E7F684F290A3AFE00B2A06A /* Main.storyboard */,
-				0E7F6852290A3AFE00B2A06A /* Assets.xcassets */,
-				0E7F6854290A3AFE00B2A06A /* LaunchScreen.storyboard */,
+				0E7F687B290A756D00B2A06A /* Controller */,
+				0E7F687A290A756600B2A06A /* View */,
+				0E7F6879290A756100B2A06A /* Model */,
 				0E7F6857290A3AFE00B2A06A /* Info.plist */,
+				0E7F687C290A757200B2A06A /* Supported Files */,
 			);
 			path = TravelerAPI;
 			sourceTree = "<group>";
@@ -125,6 +123,40 @@
 				0E7F686C290A3AFF00B2A06A /* TravelerAPIUITestsLaunchTests.swift */,
 			);
 			path = TravelerAPIUITests;
+			sourceTree = "<group>";
+		};
+		0E7F6879290A756100B2A06A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0E7F687A290A756600B2A06A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0E7F684F290A3AFE00B2A06A /* Main.storyboard */,
+				0E7F6854290A3AFE00B2A06A /* LaunchScreen.storyboard */,
+				0E7F6852290A3AFE00B2A06A /* Assets.xcassets */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0E7F687B290A756D00B2A06A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				0E7F684D290A3AFE00B2A06A /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		0E7F687C290A757200B2A06A /* Supported Files */ = {
+			isa = PBXGroup;
+			children = (
+				0E7F6849290A3AFE00B2A06A /* AppDelegate.swift */,
+				0E7F684B290A3AFE00B2A06A /* SceneDelegate.swift */,
+			);
+			path = "Supported Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
