@@ -19,6 +19,7 @@ class CurrencyViewController: UITabBarController {
     
     private func setupStyle() {
         //Update Colors, font , radius
+        
     }
     
     private func setupSubView() {

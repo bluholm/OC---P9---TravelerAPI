@@ -33,14 +33,14 @@ class TabBar: UITabBarController {
     func setupVCs() {
         viewControllers = [
             createNavController(for: WeatherViewController(),
-                                title: NSLocalizedString("Search", comment: ""),
-                                image: UIImage(systemName: "magnifyingglass")!),
-            createNavController(for: ViewController(),
-                                title: NSLocalizedString("Home", comment: "welcome to the beautiful app!"),
-                                image: UIImage(systemName: "house")!),
-            createNavController(for: ViewController(),
-                                title: NSLocalizedString("Profile", comment: ""),
-                                image: UIImage(systemName: "person")!)
+                                title: NSLocalizedString("Weather", comment: ""),
+                                image: UIImage(systemName: "cloud.snow")!),
+            createNavController(for: TranslateViewController(),
+                                title: NSLocalizedString("Translate", comment: "welcome to the beautiful app!"),
+                                image: UIImage(systemName: "exclamationmark.bubble.fill")!),
+            createNavController(for: CurrencyViewController(),
+                                title: NSLocalizedString("Currency", comment: ""),
+                                image: UIImage(systemName: "dollarsign.square")!)
         ]
     }
     
