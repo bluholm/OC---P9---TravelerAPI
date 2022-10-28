@@ -19,6 +19,7 @@
 		0E9CD0AF290B474F003DCA3C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0AE290B474F003DCA3C /* WeatherViewController.swift */; };
 		0E9CD0B1290B489C003DCA3C /* TranslateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B0290B489C003DCA3C /* TranslateViewController.swift */; };
 		0E9CD0B3290B48F0003DCA3C /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B2290B48F0003DCA3C /* CurrencyViewController.swift */; };
+		0E9CD0B5290B731B003DCA3C /* TableCurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B4290B731B003DCA3C /* TableCurrencyViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		0E9CD0AE290B474F003DCA3C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		0E9CD0B0290B489C003DCA3C /* TranslateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateViewController.swift; sourceTree = "<group>"; };
 		0E9CD0B2290B48F0003DCA3C /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		0E9CD0B4290B731B003DCA3C /* TableCurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCurrencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				0E9CD0AE290B474F003DCA3C /* WeatherViewController.swift */,
 				0E9CD0B0290B489C003DCA3C /* TranslateViewController.swift */,
 				0E9CD0B2290B48F0003DCA3C /* CurrencyViewController.swift */,
+				0E9CD0B4290B731B003DCA3C /* TableCurrencyViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			files = (
 				0E7F684E290A3AFE00B2A06A /* ViewController.swift in Sources */,
 				0E9CD0AF290B474F003DCA3C /* WeatherViewController.swift in Sources */,
+				0E9CD0B5290B731B003DCA3C /* TableCurrencyViewController.swift in Sources */,
 				0E7F684A290A3AFE00B2A06A /* AppDelegate.swift in Sources */,
 				0E9CD0B3290B48F0003DCA3C /* CurrencyViewController.swift in Sources */,
 				0E7F684C290A3AFE00B2A06A /* SceneDelegate.swift in Sources */,
