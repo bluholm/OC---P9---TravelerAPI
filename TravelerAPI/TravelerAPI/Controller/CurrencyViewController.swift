@@ -10,7 +10,6 @@ import UIKit
 class CurrencyViewController: UITabBarController {
 
     let currencyTextField: UITextField  = UITextField(frame: CGRect(x: 0, y: 0, width: 300, height: 60))
-    let chooseCurrency: UIButton = UIButton(frame: CGRect(x: 50, y:250, width: 300, height: 60))
     
     override func viewDidLoad() {
         super.viewDidLoad()
