@@ -27,15 +27,10 @@ class CurrencyViewController: UITabBarController {
         currencyTextField.layer.borderWidth = 1
         currencyTextField.layer.borderColor = UIColor.systemGray6.cgColor
         currencyTextField.backgroundColor = UIColor.systemGray6
-        
-        
-        
-        
     }
     
     private func setupSubView() {
         //self.add.subview(...)
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "change", style: .plain, target: self, action: #selector(chooseCurrencyTapped))
         view.addSubview(currencyTextField)
     }
@@ -50,11 +45,7 @@ class CurrencyViewController: UITabBarController {
     
     @objc func chooseCurrencyTapped() {
         let tableCurrecny = TableCurrencyViewController()
-        navigationController?.pushViewController(tableCurrecny, animated: true)
-        
-        
-        
-        
+        navigationController?.pushViewController(tableCurrecny, animated: true)  
     }
 
 }
