@@ -59,7 +59,7 @@ class TableCurrencyViewController: UITableViewController {
         request.httpMethod = "GET"
         request.addValue(apiKey, forHTTPHeaderField: "apikey")
         
-        let session = URLSession(configuration: .default)
+      /*let session = URLSession(configuration: .default)
         let task = session.dataTask(with: request) { data, response, error in
             guard let data = data, error == nil else {
                 return
@@ -76,7 +76,7 @@ class TableCurrencyViewController: UITableViewController {
             }
             debugPrint("decode ok affiche name \(name)")
         }
-        task?.resume()
+        task?.resume()*/
     }
 
     // - MARK: Delegate and DataSource UITableView
