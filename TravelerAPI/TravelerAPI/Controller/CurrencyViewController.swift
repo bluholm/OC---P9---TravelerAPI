@@ -14,6 +14,7 @@ class CurrencyViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
         setupStyle()
         setupSubView()
         setupLayout()
@@ -31,6 +32,8 @@ class CurrencyViewController: UITabBarController {
     
     private func setupSubView() {
         //self.add.subview(...)
+        
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "change", style: .plain, target: self, action: #selector(chooseCurrencyTapped))
         view.addSubview(currencyTextField)
     }
@@ -45,7 +48,7 @@ class CurrencyViewController: UITabBarController {
     
     @objc func chooseCurrencyTapped() {
         let tableCurrecny = TableCurrencyViewController()
-        navigationController?.pushViewController(tableCurrecny, animated: true)  
+        navigationController?.pushViewController(tableCurrecny, animated: true)
     }
 
 }

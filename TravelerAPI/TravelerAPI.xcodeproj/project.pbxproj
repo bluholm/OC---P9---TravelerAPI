@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E76D76B290EA86D002D1D08 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76D76A290EA86D002D1D08 /* Currency.swift */; };
 		0E7F684A290A3AFE00B2A06A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F6849290A3AFE00B2A06A /* AppDelegate.swift */; };
 		0E7F684C290A3AFE00B2A06A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F684B290A3AFE00B2A06A /* SceneDelegate.swift */; };
 		0E7F684E290A3AFE00B2A06A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F684D290A3AFE00B2A06A /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E76D76A290EA86D002D1D08 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		0E7F6846290A3AFE00B2A06A /* TravelerAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7F6849290A3AFE00B2A06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0E7F684B290A3AFE00B2A06A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -136,6 +138,7 @@
 		0E7F6879290A756100B2A06A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E76D76A290EA86D002D1D08 /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				0E7F684C290A3AFE00B2A06A /* SceneDelegate.swift in Sources */,
 				0E7F687E290A778D00B2A06A /* TabBar.swift in Sources */,
 				0E9CD0B1290B489C003DCA3C /* TranslateViewController.swift in Sources */,
+				0E76D76B290EA86D002D1D08 /* Currency.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
