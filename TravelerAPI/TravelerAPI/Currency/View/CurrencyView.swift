@@ -7,24 +7,25 @@
 
 import UIKit
 
-class CurrencyViewController: UITabBarController {
+final class CurrencyViewController: CurrencyController {
     
-    let currencyTextField = UITextField()
-    let answerTextField = UITextField()
-    let convertButton = UIButton(type: .system)
-    let myCurrencyLabel = UILabel()
-    let newCurrencyLabel = UILabel()
-    let exampleLabel = UILabel()
+    // MARK: Properties
+    private let currencyTextField = UITextField()
+    private let answerTextField = UITextField()
+    private let convertButton = UIButton(type: .system)
+    private let myCurrencyLabel = UILabel()
+    private let newCurrencyLabel = UILabel()
+    private let exampleLabel = UILabel()
     
+    // MARK: Life Cycle Method
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         setupStyle()
         setupSubView()
         setupLayout()
     }
     
+    // MARK: UI
     private func setupStyle() {
         currencyTextField.translatesAutoresizingMaskIntoConstraints = false
         currencyTextField.placeholder = " Amount"
@@ -66,22 +67,21 @@ class CurrencyViewController: UITabBarController {
         exampleLabel.font = UIFont(name: "Avenir Next", size: 14)
         
         newCurrencyLabel.translatesAutoresizingMaskIntoConstraints = false
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Change", style: .plain, target: self, action: #selector(chooseSymbolsButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .systemTeal
     }
     
     private func setupSubView() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Change", style: .plain, target: self, action: #selector(chooseCurrencyTapped))
-        navigationItem.rightBarButtonItem?.tintColor = .systemTeal
         view.addSubview(currencyTextField)
         view.addSubview(myCurrencyLabel)
         view.addSubview(answerTextField)
         view.addSubview(newCurrencyLabel)
         view.addSubview(exampleLabel)
         view.addSubview(convertButton)
-        
     }
     
     private func setupLayout() {
-        //if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
             NSLayoutConstraint.activate([
                 currencyTextField.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 60),
                 currencyTextField.widthAnchor.constraint(equalToConstant: 300),
@@ -107,16 +107,11 @@ class CurrencyViewController: UITabBarController {
                 convertButton.widthAnchor.constraint(equalToConstant: 260),
                 convertButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
-       /* }
-        if UIDevice.current.orientation == .landscapeLeft {
-            
-        }*/
     }
     
-    
-    @objc func chooseCurrencyTapped() {
-        let tableCurrecny = TableCurrencyViewController()
-        navigationController?.pushViewController(tableCurrecny, animated: true)
+    // MARK: Selectors
+    @objc private func chooseSymbolsButtonTapped() {
+        let tableSymbols = SymbolsViewController()
+        navigationController?.pushViewController(tableSymbols, animated: true)
     }
-    
 }
