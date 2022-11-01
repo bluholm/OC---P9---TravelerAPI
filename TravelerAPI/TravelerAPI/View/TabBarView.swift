@@ -39,7 +39,7 @@ class TabBar: UITabBarController {
                                 title: NSLocalizedString("Translate", comment: "welcome to the beautiful app!"),
                                 image: UIImage(systemName: "exclamationmark.bubble.fill")!),
             createNavController(for: CurrencyViewController(),
-                                title: NSLocalizedString("Currency  converter", comment: ""),
+                                title: NSLocalizedString("Exchange", comment: ""),
                                 image: UIImage(systemName: "dollarsign.square")!)
         ]
     }
