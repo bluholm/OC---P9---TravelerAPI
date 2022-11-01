@@ -10,3 +10,6 @@ import Foundation
 struct Currency: Codable {
     let symbols: [String: String]
 }
+
+
+

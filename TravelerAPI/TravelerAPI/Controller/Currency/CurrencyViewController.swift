@@ -14,6 +14,7 @@ class CurrencyViewController: UITabBarController {
     let convertButton = UIButton(type: .system)
     let myCurrencyLabel = UILabel()
     let newCurrencyLabel = UILabel()
+    let exampleLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,6 +59,13 @@ class CurrencyViewController: UITabBarController {
         newCurrencyLabel.textAlignment = .left
         newCurrencyLabel.text = "USD"
         newCurrencyLabel.font = UIFont(name: "Avenir Next", size: 14)
+        
+        exampleLabel.translatesAutoresizingMaskIntoConstraints = false
+        exampleLabel.textAlignment = .left
+        exampleLabel.text = "1$ = 1,23€"
+        exampleLabel.font = UIFont(name: "Avenir Next", size: 14)
+        
+        newCurrencyLabel.translatesAutoresizingMaskIntoConstraints = false
     }
     
     private func setupSubView() {
@@ -66,33 +74,43 @@ class CurrencyViewController: UITabBarController {
         view.addSubview(currencyTextField)
         view.addSubview(myCurrencyLabel)
         view.addSubview(answerTextField)
-        view.addSubview(convertButton)
         view.addSubview(newCurrencyLabel)
+        view.addSubview(exampleLabel)
+        view.addSubview(convertButton)
+        
     }
     
     private func setupLayout() {
-        NSLayoutConstraint.activate([
-            currencyTextField.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 60),
-            currencyTextField.widthAnchor.constraint(equalToConstant: 300),
-            currencyTextField.heightAnchor.constraint(equalToConstant: 60),
-            currencyTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+        //if UIDevice.current.orientation == .portrait || UIDevice.current.orientation == .portraitUpsideDown {
+            NSLayoutConstraint.activate([
+                currencyTextField.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 60),
+                currencyTextField.widthAnchor.constraint(equalToConstant: 300),
+                currencyTextField.heightAnchor.constraint(equalToConstant: 60),
+                currencyTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                
+                myCurrencyLabel.topAnchor.constraint(equalTo: currencyTextField.bottomAnchor, constant: 8),
+                myCurrencyLabel.rightAnchor.constraint(equalTo: currencyTextField.rightAnchor),
+                
+                answerTextField.topAnchor.constraint(equalTo: myCurrencyLabel.bottomAnchor, constant: 20),
+                answerTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                answerTextField.heightAnchor.constraint(equalToConstant: 60),
+                answerTextField.widthAnchor.constraint(equalToConstant: 300),
+                
+                newCurrencyLabel.topAnchor.constraint(equalTo: answerTextField.bottomAnchor, constant: 8),
+                newCurrencyLabel.rightAnchor.constraint(equalTo: answerTextField.rightAnchor),
+                
+                exampleLabel.topAnchor.constraint(equalTo: newCurrencyLabel.bottomAnchor,constant: 8),
+                exampleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+                
+                convertButton.topAnchor.constraint(equalTo: exampleLabel.bottomAnchor, constant: 60),
+                convertButton.heightAnchor.constraint(equalToConstant: 60),
+                convertButton.widthAnchor.constraint(equalToConstant: 260),
+                convertButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
+            ])
+       /* }
+        if UIDevice.current.orientation == .landscapeLeft {
             
-            myCurrencyLabel.topAnchor.constraint(equalTo: currencyTextField.bottomAnchor, constant: 8),
-            myCurrencyLabel.rightAnchor.constraint(equalTo: currencyTextField.rightAnchor),
-            
-            answerTextField.topAnchor.constraint(equalTo: myCurrencyLabel.bottomAnchor, constant: 20),
-            answerTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            answerTextField.heightAnchor.constraint(equalToConstant: 60),
-            answerTextField.widthAnchor.constraint(equalToConstant: 300),
-            
-            newCurrencyLabel.topAnchor.constraint(equalTo: answerTextField.bottomAnchor, constant: 8),
-            newCurrencyLabel.rightAnchor.constraint(equalTo: answerTextField.rightAnchor),
-            
-            convertButton.topAnchor.constraint(equalTo: answerTextField.bottomAnchor, constant: 60),
-            convertButton.heightAnchor.constraint(equalToConstant: 60),
-            convertButton.widthAnchor.constraint(equalToConstant: 260),
-            convertButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        ])
+        }*/
     }
     
     
