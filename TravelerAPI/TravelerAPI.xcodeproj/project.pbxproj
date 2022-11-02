@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E38D58D2911DA3300D73388 /* SymbolsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E38D58C2911DA3300D73388 /* SymbolsViewController.swift */; };
 		0E76D76B290EA86D002D1D08 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E76D76A290EA86D002D1D08 /* Currency.swift */; };
 		0E7F684A290A3AFE00B2A06A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F6849290A3AFE00B2A06A /* AppDelegate.swift */; };
 		0E7F684C290A3AFE00B2A06A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E7F684B290A3AFE00B2A06A /* SceneDelegate.swift */; };
@@ -20,7 +21,7 @@
 		0E9CD0B1290B489C003DCA3C /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B0290B489C003DCA3C /* TranslateView.swift */; };
 		0E9CD0B3290B48F0003DCA3C /* CurrencyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B2290B48F0003DCA3C /* CurrencyView.swift */; };
 		0E9CD0B5290B731B003DCA3C /* SymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B4290B731B003DCA3C /* SymbolsView.swift */; };
-		0ECB0A4729111A19000D0A67 /* CalculateCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB0A4629111A19000D0A67 /* CalculateCurrency.swift */; };
+		0ECB0A4729111A19000D0A67 /* CurrencyService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB0A4629111A19000D0A67 /* CurrencyService.swift */; };
 		0ECB0A4C29111A76000D0A67 /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB0A4B29111A76000D0A67 /* CurrencyViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0E38D58C2911DA3300D73388 /* SymbolsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsViewController.swift; sourceTree = "<group>"; };
 		0E76D76A290EA86D002D1D08 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		0E7F6846290A3AFE00B2A06A /* TravelerAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelerAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E7F6849290A3AFE00B2A06A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +61,7 @@
 		0E9CD0B0290B489C003DCA3C /* TranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
 		0E9CD0B2290B48F0003DCA3C /* CurrencyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyView.swift; sourceTree = "<group>"; };
 		0E9CD0B4290B731B003DCA3C /* SymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolsView.swift; sourceTree = "<group>"; };
-		0ECB0A4629111A19000D0A67 /* CalculateCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateCurrency.swift; sourceTree = "<group>"; };
+		0ECB0A4629111A19000D0A67 /* CurrencyService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyService.swift; sourceTree = "<group>"; };
 		0ECB0A4B29111A76000D0A67 /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				0E76D76A290EA86D002D1D08 /* Currency.swift */,
-				0ECB0A4629111A19000D0A67 /* CalculateCurrency.swift */,
+				0ECB0A4629111A19000D0A67 /* CurrencyService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				0ECB0A4B29111A76000D0A67 /* CurrencyViewController.swift */,
+				0E38D58C2911DA3300D73388 /* SymbolsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -381,10 +384,11 @@
 			files = (
 				0E9CD0AF290B474F003DCA3C /* WeatherViewController.swift in Sources */,
 				0E9CD0B5290B731B003DCA3C /* SymbolsView.swift in Sources */,
+				0E38D58D2911DA3300D73388 /* SymbolsViewController.swift in Sources */,
 				0E7F684A290A3AFE00B2A06A /* AppDelegate.swift in Sources */,
 				0E9CD0B3290B48F0003DCA3C /* CurrencyView.swift in Sources */,
 				0E7F684C290A3AFE00B2A06A /* SceneDelegate.swift in Sources */,
-				0ECB0A4729111A19000D0A67 /* CalculateCurrency.swift in Sources */,
+				0ECB0A4729111A19000D0A67 /* CurrencyService.swift in Sources */,
 				0E7F687E290A778D00B2A06A /* TravelTabBarViewController.swift in Sources */,
 				0E9CD0B1290B489C003DCA3C /* TranslateView.swift in Sources */,
 				0E76D76B290EA86D002D1D08 /* Currency.swift in Sources */,

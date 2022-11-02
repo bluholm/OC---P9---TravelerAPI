@@ -8,7 +8,7 @@
 import UIKit
 
 class CurrencyController: UIViewController {
-
+    
     // MARK: Life Cycle Method
     override func viewDidLoad() {
         super.viewDidLoad()

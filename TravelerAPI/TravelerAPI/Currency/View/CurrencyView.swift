@@ -111,7 +111,7 @@ final class CurrencyViewController: CurrencyController {
     
     // MARK: Selectors
     @objc private func chooseSymbolsButtonTapped() {
-        let tableSymbols = SymbolsViewController()
+        let tableSymbols = SymbolsView()
         navigationController?.pushViewController(tableSymbols, animated: true)
     }
 }
