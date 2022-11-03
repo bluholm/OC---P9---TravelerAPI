@@ -16,7 +16,7 @@ final class TranslateViewController: UIViewController {
     private let userLangage = UILabel()
     private let translatedLangageLabel = UILabel()
     
-    // MARK: Life Cycle Method
+    // MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,7 +25,7 @@ final class TranslateViewController: UIViewController {
         setupLayout()
     }
     
-    // MARK: UI functions
+    // MARK: Private
     private func setupStyle() {
         userLangage.translatesAutoresizingMaskIntoConstraints = false
         userLangage.textAlignment = .left

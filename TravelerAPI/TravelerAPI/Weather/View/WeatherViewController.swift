@@ -9,7 +9,7 @@ import UIKit
 
 final class WeatherViewController: UIViewController {
 
-    // MARK: Life Cycle Method
+    // MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,7 +18,7 @@ final class WeatherViewController: UIViewController {
         self.setupLayout()
     }
     
-    // MARK: Actions
+    // MARK: Private
     private func setupStyle() {
         //Update Colors, font , radius
         

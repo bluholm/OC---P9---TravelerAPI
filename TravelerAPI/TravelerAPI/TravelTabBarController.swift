@@ -1,13 +1,13 @@
 //
-//  TravelTabBarViewController.swift
-//  TravelTabBarViewController
+//  TravelTabBarController.swift
+//
 //
 //  Created by Marc-Antoine BAR on 2022-10-27.
 //
 
 import UIKit
 
-final class TravelTabBarViewController: UITabBarController {
+final class TravelTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
