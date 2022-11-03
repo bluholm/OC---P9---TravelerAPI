@@ -7,16 +7,18 @@
 
 import UIKit
 
-class WeatherViewController: UITabBarController {
+final class WeatherViewController: UIViewController {
 
+    // MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setupStyle()
-        setupSubView()
-        setupLayout()
+        self.setupStyle()
+        self.setupSubView()
+        self.setupLayout()
     }
     
+    // MARK: Private
     private func setupStyle() {
         //Update Colors, font , radius
         

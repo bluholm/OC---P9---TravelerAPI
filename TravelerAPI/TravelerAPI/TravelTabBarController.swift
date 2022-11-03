@@ -1,25 +1,25 @@
 //
-//  TabBar.swift
-//  TravelerAPI
+//  TravelTabBarController.swift
+//
 //
 //  Created by Marc-Antoine BAR on 2022-10-27.
 //
 
 import UIKit
 
-class TabBar: UITabBarController {
+final class TravelTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .systemBackground
+        self.view.backgroundColor = .systemBackground
         UITabBar.appearance().barTintColor = .systemGray6
-        tabBar.tintColor = .label
+        self.tabBar.tintColor = .label
         
-        setupVCs()
+        self.setupViewControllers()
     }
     
-    fileprivate func createNavController(for rootViewController: UIViewController,
+    private func createNavController(for rootViewController: UIViewController,
                                          title: String,
                                          image: UIImage) -> UIViewController {
         let navController = UINavigationController(rootViewController: rootViewController)
@@ -30,8 +30,8 @@ class TabBar: UITabBarController {
         return navController
     }
     
-    func setupVCs() {
-        viewControllers = [
+    private func setupViewControllers() {
+        self.viewControllers = [
             createNavController(for: WeatherViewController(),
                                 title: NSLocalizedString("Weather", comment: ""),
                                 image: UIImage(systemName: "cloud.snow")!),

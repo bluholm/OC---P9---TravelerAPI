@@ -7,22 +7,25 @@
 
 import UIKit
 
-class TranslateViewController: UITabBarController {
+final class TranslateViewController: UIViewController {
 
-    let textToTranslate = UITextView()
-    let textTranslated = UILabel()
-    let translateButton = UIButton(type: .system)
-    let userLangage = UILabel()
-    let translatedLangageLabel = UILabel()
+    // MARK: Properties
+    private let textToTranslate = UITextView()
+    private let textTranslated = UILabel()
+    private let translateButton = UIButton(type: .system)
+    private let userLangage = UILabel()
+    private let translatedLangageLabel = UILabel()
     
+    // MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         setupStyle()
         setupSubView()
         setupLayout()
     }
     
+    // MARK: Private
     private func setupStyle() {
         userLangage.translatesAutoresizingMaskIntoConstraints = false
         userLangage.textAlignment = .left
@@ -52,7 +55,6 @@ class TranslateViewController: UITabBarController {
         translateButton.setTitleColor(UIColor.white, for: .normal)
         translateButton.layer.cornerRadius = 8
         translateButton.titleLabel?.font = UIFont(name: "Avenir Next", size: 33)
-        
     }
     
     private func setupSubView() {
@@ -61,7 +63,6 @@ class TranslateViewController: UITabBarController {
         view.addSubview(translatedLangageLabel)
         view.addSubview(textTranslated)
         view.addSubview(translateButton)
-        
     }
     
     private func setupLayout() {
@@ -86,12 +87,6 @@ class TranslateViewController: UITabBarController {
             translateButton.heightAnchor.constraint(equalToConstant: 60),
             translateButton.widthAnchor.constraint(equalToConstant: 260),
             translateButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
-        
         ])
-        
     }
-
-    
-
-
 }
