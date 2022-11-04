@@ -7,10 +7,10 @@
 
 import UIKit
 
-class CurrencyViewController: UIViewController {
+final class CurrencyViewController: UIViewController {
     
     // MARK: Properties
-    var profile: CurrencyView = CurrencyView()
+    private var profile: CurrencyView = CurrencyView()
     
     // MARK: Override
     override func viewDidLoad() {

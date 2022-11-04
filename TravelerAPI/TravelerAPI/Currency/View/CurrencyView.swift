@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CurrencyView: UIView {
+final class CurrencyView: UIView {
     
     // MARK: Properties
     private let currencyTextField = UITextField()
@@ -16,7 +16,7 @@ class CurrencyView: UIView {
     private let localeCurrencyLabel = UILabel()
     private let newCurrencyLabel = UILabel()
     private let exampleLabel = UILabel()
-    let choosenCurrency = ["EU":"France"]
+    private let choosenCurrency = ["EU":"France"]
     
     // MARK: Override
     override init(frame: CGRect) {
@@ -112,9 +112,4 @@ class CurrencyView: UIView {
                 convertButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
             ])
     }
-    
-    
-    
-    
-    
 }

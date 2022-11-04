@@ -11,7 +11,7 @@ final class SymbolView: UITableView {
     
     // MARK: Properties
     let toggleActivityIndicator = UIActivityIndicatorView()
-    let SymbolsViewController = SymbolsTableViewController()
+    private let SymbolsViewController = SymbolsTableViewController()
     
     
     // MARK: Private
@@ -47,7 +47,4 @@ final class SymbolView: UITableView {
             toggleActivityIndicator.widthAnchor.constraint(equalToConstant: 20)
         ])
     }
-    
-    
-    
 }
