@@ -16,15 +16,15 @@ final class CurrencyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(chooseSymbolsButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(choodeSymbolNavigationButtonTapped))
         navigationItem.rightBarButtonItem?.tintColor = .systemTeal
         self.view = profile
     }
     
     // MARK: Selectors
-    @objc func chooseSymbolsButtonTapped() {
+    @objc func choodeSymbolNavigationButtonTapped() {
         let viewSymbolsTable = SymbolsTableViewController()
-        navigationController?.pushViewController(viewSymbolsTable, animated: true)
+        self.navigationController?.pushViewController(viewSymbolsTable, animated: true)
     }
     
     

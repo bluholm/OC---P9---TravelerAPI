@@ -8,7 +8,7 @@
 import Foundation
 
 struct Currency: Decodable {
-    var symbols: [String: String]
+    let symbols: [String: String]
 }
 
 

@@ -13,20 +13,20 @@ final class SymbolsTableViewController: UITableViewController {
     private var listOfSymbols = [String]()
     private let currencyService = CurrencyService()
     let identifierCell = "symbolCell"
-    private let profile: SymbolView = SymbolView()
+    private var profile: SymbolView = SymbolView()
     private let titleTableView = "Choose Currency"
     
     
     // MARK: Override
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = titleTableView
+        
         profile.dataSource = self
         profile.delegate = self
-        profile.loadTableView()
-        
+        profile.loadSetup()
         self.view = profile
-        
+        navigationItem.title = titleTableView
+        SymbolView().loadSetup()
         self.getCurrency()
     }
     
@@ -46,7 +46,7 @@ final class SymbolsTableViewController: UITableViewController {
         return
     }
     
-    // -MARK: Privates Customs Functions
+    // -MARK: Custom Functions
     private func  getCurrency() {
         currencyService.getCurrency { success, symbols in
             if success, let symbols = symbols {
@@ -64,4 +64,3 @@ final class SymbolsTableViewController: UITableViewController {
     }
 
 }
-

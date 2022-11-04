@@ -11,11 +11,10 @@ final class SymbolView: UITableView {
     
     // MARK: Properties
     let toggleActivityIndicator = UIActivityIndicatorView()
-    private let SymbolsViewController = SymbolsTableViewController()
-    
+    let identifierCell = "symbolCell"
     
     // MARK: Private
-    func loadTableView() {
+    func loadSetup() {
         self.setupStyle()
         self.setupSubView()
         self.setupLayout()
@@ -30,7 +29,7 @@ final class SymbolView: UITableView {
     }
     
     private func setupSubView() {
-        self.register(UITableViewCell.self, forCellReuseIdentifier: SymbolsViewController.identifierCell)
+        self.register(UITableViewCell.self, forCellReuseIdentifier: identifierCell)
         self.addSubview(toggleActivityIndicator)
     }
     
