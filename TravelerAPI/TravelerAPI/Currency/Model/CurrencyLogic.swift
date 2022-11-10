@@ -7,12 +7,20 @@
 
 import Foundation
 
-final class CurrencyService {
+
+protocol CurrencyLogicDelegate: AnyObject {
+    func didFetchCurrencySymbol(symbol: String)
+}
+
+
+final class CurrencyLogic {
     
     // MARK: Properties
     private let currencyUrl = "https://api.apilayer.com/fixer/symbols"
     private let apiKey = "RsMNr3axWpCqqqI2viaMbRnLmayHmFEd"
     private var task:URLSessionDataTask?
+    
+    weak var delegate: CurrencyLogicDelegate?
     
     // MARK: Actions
     func getCurrency(completionHandler: @escaping (Bool, Currency?) -> Void) {
@@ -42,5 +50,4 @@ final class CurrencyService {
         }
         task.resume()
     }
-    
 }

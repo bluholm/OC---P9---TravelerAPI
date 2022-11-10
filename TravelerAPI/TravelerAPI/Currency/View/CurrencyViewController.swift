@@ -1,13 +1,13 @@
 //
-//  currencyView.swift
+//  CurrencyViewController.swift
 //  TravelerAPI
 //
-//  Created by Marc-Antoine BAR on 2022-11-04.
-//
+//  Created by Marc-Antoine BAR on 2022-10-28.
+//Fixer.io
 
 import UIKit
 
-final class CurrencyView: UIView {
+final class CurrencyViewController: UIViewController {
     
     // MARK: Properties
     private let currencyTextField = UITextField()
@@ -16,19 +16,16 @@ final class CurrencyView: UIView {
     private let localeCurrencyLabel = UILabel()
     private let newCurrencyLabel = UILabel()
     private let exampleLabel = UILabel()
-    private let choosenCurrency = ["EU":"France"]
+    
     
     // MARK: Override
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         setupStyle()
         setupSubView()
         setupLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
     }
     
     // MARK: Private
@@ -73,30 +70,31 @@ final class CurrencyView: UIView {
         exampleLabel.font = UIFont(name: "Avenir Next", size: 14)
         
         newCurrencyLabel.translatesAutoresizingMaskIntoConstraints = false
-        
     }
     
     private func setupSubView() {
-        self.addSubview(currencyTextField)
-        self.addSubview(localeCurrencyLabel)
-        self.addSubview(answerTextField)
-        self.addSubview(newCurrencyLabel)
-        self.addSubview(exampleLabel)
-        self.addSubview(convertButton)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(choodeSymbolNavigationButtonTapped))
+        navigationItem.rightBarButtonItem?.tintColor = .systemTeal
+        view.addSubview(currencyTextField)
+        view.addSubview(localeCurrencyLabel)
+        view.addSubview(answerTextField)
+        view.addSubview(newCurrencyLabel)
+        view.addSubview(exampleLabel)
+        view.addSubview(convertButton)
     }
     
     private func setupLayout() {
             NSLayoutConstraint.activate([
-                currencyTextField.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor, constant: 60),
+                currencyTextField.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 60),
                 currencyTextField.widthAnchor.constraint(equalToConstant: 300),
                 currencyTextField.heightAnchor.constraint(equalToConstant: 60),
-                currencyTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                currencyTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
                 localeCurrencyLabel.topAnchor.constraint(equalTo: currencyTextField.bottomAnchor, constant: 8),
                 localeCurrencyLabel.rightAnchor.constraint(equalTo: currencyTextField.rightAnchor),
                 
                 answerTextField.topAnchor.constraint(equalTo: localeCurrencyLabel.bottomAnchor, constant: 20),
-                answerTextField.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                answerTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 answerTextField.heightAnchor.constraint(equalToConstant: 60),
                 answerTextField.widthAnchor.constraint(equalToConstant: 300),
                 
@@ -104,12 +102,18 @@ final class CurrencyView: UIView {
                 newCurrencyLabel.rightAnchor.constraint(equalTo: answerTextField.rightAnchor),
                 
                 exampleLabel.topAnchor.constraint(equalTo: newCurrencyLabel.bottomAnchor,constant: 8),
-                exampleLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+                exampleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor),
                 
                 convertButton.topAnchor.constraint(equalTo: exampleLabel.bottomAnchor, constant: 60),
                 convertButton.heightAnchor.constraint(equalToConstant: 60),
                 convertButton.widthAnchor.constraint(equalToConstant: 260),
-                convertButton.centerXAnchor.constraint(equalTo: self.centerXAnchor)
+                convertButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
             ])
+    }
+    
+    // MARK: Selectors
+    @objc func choodeSymbolNavigationButtonTapped() {
+        let viewSymbolsTable = SymbolsTableViewController()
+        self.navigationController?.pushViewController(viewSymbolsTable, animated: true)
     }
 }
