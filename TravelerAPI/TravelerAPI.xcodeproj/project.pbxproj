@@ -23,6 +23,7 @@
 		0E9CD0AF290B474F003DCA3C /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0AE290B474F003DCA3C /* WeatherViewController.swift */; };
 		0E9CD0B1290B489C003DCA3C /* TranslateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B0290B489C003DCA3C /* TranslateView.swift */; };
 		0E9CD0B3290B48F0003DCA3C /* CurrencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E9CD0B2290B48F0003DCA3C /* CurrencyViewController.swift */; };
+		0EB608C6291DB5AD00ABE62A /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB608C5291DB5AD00ABE62A /* WeatherController.swift */; };
 		0ECB0A4729111A19000D0A67 /* CurrencyLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ECB0A4629111A19000D0A67 /* CurrencyLogic.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		0E9CD0AE290B474F003DCA3C /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		0E9CD0B0290B489C003DCA3C /* TranslateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateView.swift; sourceTree = "<group>"; };
 		0E9CD0B2290B48F0003DCA3C /* CurrencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyViewController.swift; sourceTree = "<group>"; };
+		0EB608C5291DB5AD00ABE62A /* WeatherController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherController.swift; sourceTree = "<group>"; };
 		0ECB0A4629111A19000D0A67 /* CurrencyLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyLogic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -194,6 +196,7 @@
 		0ECB0A3E291116C1000D0A67 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				0EB608C5291DB5AD00ABE62A /* WeatherController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				0E7F684A290A3AFE00B2A06A /* AppDelegate.swift in Sources */,
 				0E803BE9291CF59F00BABF47 /* Weather.swift in Sources */,
 				0E9CD0B3290B48F0003DCA3C /* CurrencyViewController.swift in Sources */,
+				0EB608C6291DB5AD00ABE62A /* WeatherController.swift in Sources */,
 				0E7F684C290A3AFE00B2A06A /* SceneDelegate.swift in Sources */,
 				0ECB0A4729111A19000D0A67 /* CurrencyLogic.swift in Sources */,
 				0E7F687E290A778D00B2A06A /* TravelTabBarController.swift in Sources */,

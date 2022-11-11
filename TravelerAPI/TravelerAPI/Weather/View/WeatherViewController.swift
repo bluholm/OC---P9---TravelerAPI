@@ -17,14 +17,27 @@ final class WeatherViewController: UIViewController {
     
     private let weatherLabelDown = UILabel()
     private let weatherViewDown = UIView()
+    private let temperatureLabelDown = UILabel()
+    private let toggleIndicatorDown = UIActivityIndicatorView()
+    
     
     var weatherImageUp = UIImage()
     let myImageViewUp:UIImageView = UIImageView()
+    var weatherImageDown = UIImage()
+    let myImageViewDown:UIImageView = UIImageView()
     
-    let weatherUrlUp = "https://api.open-meteo.com/v1/forecast?latitude=40.71&longitude=-74.01&current_weather=true"
-    let weatherUrlDown = "https://api.open-meteo.com/v1/forecast?latitude=48.8567&longitude=2.3510&current_weather=true"
+    private let controller = WeatherController()
     
-    private let model = WeatherLogic()
+    // MARK: LifeCycle Method
+    init() {
+        super.init(nibName: nil, bundle: nil)
+        self.controller.view = self
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        self.controller.view = self
+    }
     
     
     // MARK: Override
@@ -35,24 +48,21 @@ final class WeatherViewController: UIViewController {
         self.setupSubView()
         self.setupLayout()
         
-
-        self.model.getWeather(url: weatherUrlUp) { sucess, data in
-            if sucess, let data=data {
-                self.updateFieldWeather(element: data)
-            } else {
-                //error
-            }
-        }
+        self.controller.onViewLoad()
         
-        self.model.getWeather(url: weatherUrlDown) { sucess, data in
-            if sucess, let data=data {
-                //self.updateFieldWeather(element: data)
-                print(data)
-            } else {
-                //error
-            }
-        }
-        
+    }
+    
+    // MARK: Accessible
+    func displayWeatherUp(icon: String, temperature: Double) {
+        toggleIndicatorUp.isHidden = true
+        temperatureLabelUp.text = "\(temperature) °"
+        myImageViewUp.image = UIImage(systemName: icon, withConfiguration: UIImage.SymbolConfiguration(pointSize: 60))
+    }
+    
+    func displayWeatherDown(icon: String, temperature: Double) {
+        toggleIndicatorDown.isHidden = true
+        temperatureLabelDown.text = "\(temperature) °"
+        myImageViewDown.image = UIImage(systemName: icon, withConfiguration: UIImage.SymbolConfiguration(pointSize: 60))
     }
     
     // MARK: Private
@@ -60,11 +70,6 @@ final class WeatherViewController: UIViewController {
         //Update Colors, font , radius
         myImageViewUp.translatesAutoresizingMaskIntoConstraints = false
         myImageViewUp.image = weatherImageUp
-        
-        temperatureLabelUp.translatesAutoresizingMaskIntoConstraints = false
-        temperatureLabelUp.text = ""
-        temperatureLabelUp.textAlignment = .center
-        temperatureLabelUp.font = UIFont(name: "Avenir Next", size: 20)
         
         weatherLabelUp.translatesAutoresizingMaskIntoConstraints = false
         weatherLabelUp.text = "New York, USA"
@@ -75,6 +80,19 @@ final class WeatherViewController: UIViewController {
         weatherViewUp.backgroundColor = .systemGray6
         weatherViewUp.layer.cornerRadius = 6
         
+        temperatureLabelUp.translatesAutoresizingMaskIntoConstraints = false
+        temperatureLabelUp.text = ""
+        temperatureLabelUp.textAlignment = .center
+        temperatureLabelUp.font = UIFont(name: "Avenir Next", size: 20)
+        
+        toggleIndicatorUp.isHidden = false
+        toggleIndicatorUp.translatesAutoresizingMaskIntoConstraints = false
+        toggleIndicatorUp.style = .large
+        toggleIndicatorUp.startAnimating()
+        
+        myImageViewDown.translatesAutoresizingMaskIntoConstraints = false
+        myImageViewDown.image = weatherImageDown
+        
         weatherLabelDown.translatesAutoresizingMaskIntoConstraints = false
         weatherLabelDown.text = "Paris, France"
         weatherLabelDown.textAlignment = .left
@@ -84,10 +102,17 @@ final class WeatherViewController: UIViewController {
         weatherViewDown.backgroundColor = .systemGray6
         weatherViewDown.layer.cornerRadius = 6
         
-        toggleIndicatorUp.isHidden = false
-        toggleIndicatorUp.translatesAutoresizingMaskIntoConstraints = false
-        toggleIndicatorUp.style = .large
-        toggleIndicatorUp.startAnimating()
+        temperatureLabelDown.translatesAutoresizingMaskIntoConstraints = false
+        temperatureLabelDown.text = ""
+        temperatureLabelDown.textAlignment = .center
+        temperatureLabelDown.font = UIFont(name: "Avenir Next", size: 20)
+        
+        toggleIndicatorDown.isHidden = false
+        toggleIndicatorDown.translatesAutoresizingMaskIntoConstraints = false
+        toggleIndicatorDown.style = .large
+        toggleIndicatorDown.startAnimating()
+        
+        
         
     }
     
@@ -95,12 +120,16 @@ final class WeatherViewController: UIViewController {
         //self.add.subview(...)
         view.addSubview(weatherLabelUp)
         view.addSubview(weatherViewUp)
-        view.addSubview(weatherLabelDown)
-        view.addSubview(weatherViewDown)
-        
+        weatherViewUp.addSubview(toggleIndicatorUp)
         weatherViewUp.addSubview(myImageViewUp)
         weatherViewUp.addSubview(temperatureLabelUp)
-        weatherViewUp.addSubview(toggleIndicatorUp)
+        
+        view.addSubview(weatherLabelDown)
+        view.addSubview(weatherViewDown)
+        weatherViewDown.addSubview(toggleIndicatorDown)
+        weatherViewDown.addSubview(myImageViewDown)
+        weatherViewDown.addSubview(temperatureLabelDown)
+        
     }
     
     private func setupLayout() {
@@ -114,6 +143,15 @@ final class WeatherViewController: UIViewController {
             weatherViewUp.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             weatherViewUp.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             
+            temperatureLabelUp.bottomAnchor.constraint(equalTo: weatherViewUp.bottomAnchor, constant: -8),
+            temperatureLabelUp.centerXAnchor.constraint(equalTo: weatherViewUp.centerXAnchor),
+            
+            myImageViewUp.centerXAnchor.constraint(equalTo: weatherViewUp.centerXAnchor),
+            myImageViewUp.centerYAnchor.constraint(equalTo: weatherViewUp.centerYAnchor),
+            
+            toggleIndicatorUp.centerXAnchor.constraint(equalTo: weatherViewUp.centerXAnchor),
+            toggleIndicatorUp.centerYAnchor.constraint(equalTo: weatherViewUp.centerYAnchor),
+            
             weatherLabelDown.topAnchor.constraint(equalTo: weatherViewUp.bottomAnchor, constant: 35),
             weatherLabelDown.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             
@@ -122,21 +160,17 @@ final class WeatherViewController: UIViewController {
             weatherViewDown.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
             weatherViewDown.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor),
             
-            temperatureLabelUp.bottomAnchor.constraint(equalTo: weatherViewUp.bottomAnchor, constant: 0),
-            temperatureLabelUp.centerXAnchor.constraint(equalTo: weatherViewUp.centerXAnchor),
+            temperatureLabelDown.bottomAnchor.constraint(equalTo: weatherViewDown.bottomAnchor, constant: -8),
+            temperatureLabelDown.centerXAnchor.constraint(equalTo: weatherViewDown.centerXAnchor),
             
-            myImageViewUp.centerXAnchor.constraint(equalTo: weatherViewUp.centerXAnchor),
-            myImageViewUp.centerYAnchor.constraint(equalTo: weatherViewUp.centerYAnchor),
+            myImageViewDown.centerXAnchor.constraint(equalTo: weatherViewDown.centerXAnchor),
+            myImageViewDown.centerYAnchor.constraint(equalTo: weatherViewDown.centerYAnchor),
             
-            toggleIndicatorUp.centerXAnchor.constraint(equalTo: weatherViewUp.centerXAnchor),
-            toggleIndicatorUp.centerYAnchor.constraint(equalTo: weatherViewUp.centerYAnchor),
+            toggleIndicatorDown.centerXAnchor.constraint(equalTo: weatherViewDown.centerXAnchor),
+            toggleIndicatorDown.centerYAnchor.constraint(equalTo: weatherViewDown.centerYAnchor),
+            
+            
         ])
     }
     
-    private func updateFieldWeather(element: Weather) {
-        let icon = model.getCodeWeather(code: element.currentWeather.weathercode)
-        toggleIndicatorUp.isHidden = true
-        temperatureLabelUp.text = "\(element.currentWeather.temperature) °"
-        myImageViewUp.image = UIImage(systemName: icon, withConfiguration: UIImage.SymbolConfiguration(pointSize: 60))
-    }
 }

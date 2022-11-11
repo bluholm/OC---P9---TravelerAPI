@@ -24,8 +24,7 @@ final class SymbolsTableViewController: UITableViewController {
     }
     
     required init?(coder: NSCoder) {
-        super.init(coder: coder)
-        self.controller.view = self
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: Override
